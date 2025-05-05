@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pipe Solution India - Login & Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .tab button {
+      background: #ddd;
+      border: none;
+      padding: 10px;
+      width: 50%;
+      cursor: pointer;
+    }
+    .tab button.active {
+      background: #007BFF;
+      color: white;
+    }
+    form {
+      display: none;
+    }
+    form.active {
+      display: block;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button.submit-btn {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.submit-btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Pipe Solution India</h2>
+
+  <div class="tab">
+    <button id="loginTab" class="active" onclick="showForm('login')">Login</button>
+    <button id="registerTab" onclick="showForm('register')">Register</button>
+  </div>
+
+  <form id="loginForm" class="active" action="/login" method="post">
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit" class="submit-btn">Login</button>
+  </form>
+
+  <form id="registerForm" action="/register" method="post">
+    <input type="text" name="name" placeholder="Full Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+    <button type="submit" class="submit-btn">Register</button>
+    
+  </form>
+  <!-- Register Form -->
+<form id="register-form" action="PSI.5.HTML" method="post">
+  <input type="text" name="name" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="password" name="password" placeholder="Password" required />
+  <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+  <button type="submit">Register</button>
+</form>
+
+ 
+</div>
+
+<script>
+  function showForm(type) {
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const loginTab = document.getElementById("loginTab");
+    const registerTab = document.getElementById("registerTab");
+
+    if (type === "login") {
+      loginForm.classList.add("active");
+      registerForm.classList.remove("active");
+      loginTab.classList.add("active");
+      registerTab.classList.remove("active");
+    } else {
+      loginForm.classList.remove("active");
+      registerForm.classList.add("active");
+      loginTab.classList.remove("active");
+      registerTab.classList.add("active");
+    }
+  }
+
+</script>
+
+</body>
+</html>
